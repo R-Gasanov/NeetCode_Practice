@@ -42,6 +42,30 @@ public class Neetcode150_05
 			}
 			//solution.get(index).put(counter++);
 		}
+		// So above we have a map with the key representing the integer and the value the amount of them
+		
+		
+		
+		
+		for (int index = 0; index < k; index++)
+		{
+			int highest_sum = 0;
+			int key_hs = 0;
+			for (Map.Entry<Integer, Integer> entry: solution.entrySet())
+			{
+				if (entry.getValue() > highest_sum)
+				{
+					highest_sum = entry.getValue();
+					key_hs = entry.getKey();
+				}
+			}
+			result.add(key_hs); // Adding the highest value found.
+			solution.remove(key_hs);
+		}
+		
+		
+		
+		/*
 		TreeMap<Integer, Integer> swapped_solution = new TreeMap<>();
 		// Essentially I came across an error, what I wanna do here is have the treemap sort it
 		// based on the counter values I've added and then show its value.
@@ -66,6 +90,9 @@ public class Neetcode150_05
 			//result.add(swapped_solution.get(swapped_solution.lowerKey(check)));
 			//check = swapped_solution.lowerKey(check);
 		}
+		*/
+		
+		// Below, we are converting the ArrayList into a normal array int[]
 		answer = result.stream().mapToInt(Integer::intValue).toArray();
 		
 		/*
