@@ -36,7 +36,6 @@ public class Neetcode150_04
 	{
 		StringBuilder String_A = new StringBuilder(s), String_B = new StringBuilder(t);
 		// Above are mutable strings, meaning that they can be altered in comparison to normal strings
-		int count = 0;
 		for (int index_A = 0; index_A < String_A.length(); index_A++)
 		{
 			for (int index_B = 0; index_B < String_B.length(); index_B++)
@@ -54,8 +53,6 @@ public class Neetcode150_04
 				}
 			}
 		}
-		//System.out.println("Here is the first string"+ String_A);
-		//System.out.println("Here is the second string"+ String_B);
 		if (String_A.toString().equals("") && String_B.toString().equals(""))
 		{
 			return true;
